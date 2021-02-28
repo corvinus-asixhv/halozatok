@@ -1,0 +1,55 @@
+﻿
+h1{
+    text-align:center;
+}
+h1,h2,h3 {
+    font-style: italic;
+}
+
+.keret{
+    margin: 10px;
+    padding: 10px;
+    border: 1px dashed dodgerblue;
+    border-radius: 5px;
+}
+hr{
+    background-color: slategray;
+    width:auto;
+    height:2px;
+}
+div.kulso {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid dodgerblue; 
+    border-radius: 5px;
+}
+ol{
+    list-style-type:upper-roman;
+}
+ul.negyzet{
+    list-style-type:square;
+}
+ul.kor{
+    list-style-type:circle;
+}
+a.barca {
+    padding: 5px;
+    border-radius: 15px;
+    background-color: blue;
+    color: red;
+}
+a.lakers {
+    padding: 5px;
+    border-radius: 15px;
+    background-color: yellow;
+    color: purple;
+}
+a:hover.lakers {
+        /* vegyük észre, hogy örökli a tulajdonságokat a szülőtől, egyet közülük felülírunk*/
+        background-color: purple;
+        color: yellow;
+    }
+    a:hover.barca {
+        background-color: red;
+        color: blue;
+    }

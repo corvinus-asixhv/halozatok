@@ -1,0 +1,149 @@
+﻿{
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: bold;
+    text-align: center;
+}
+
+#header {
+    background-color: tomato;
+    padding: 20px;
+}
+
+
+#nav a {
+   
+    flex: 1 1 auto;
+    text-decoration: none;
+    color: black;
+}
+
+#nav {
+    background: deepskyblue;
+    padding: 20px;
+}
+
+#article {
+    text-align: left;
+    background: gold;
+    padding: 20px;
+    display: flex;
+}
+
+#aside {
+    background-color: lightgreen;
+    padding: 20px;
+}
+
+#footer {
+    background: hotpink;
+    padding: 20px;
+}
+
+
+@media screen and (min-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    #main {
+        display: flex;
+    }
+
+    #nav,
+    #header {
+        order: -1;
+    }
+
+    #article {
+        flex: 1 1 75%;
+    }
+
+    #aside {
+        flex: 1 1 25%;
+    }
+}
+#bemutatkozás{
+    margin:20px;
+}
+img {
+    float: right;
+    margin: 30px;
+}
+#nav a#current {
+    color: #ffffff;
+    background-color: #336699;
+    text-decoration: none;
+}
+/*innentől a korábbi formázások*/
+h1 {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-style: italic;
+}
+
+.keret {
+    margin: 10px;
+    padding: 10px;
+    border: 1px dashed dodgerblue;
+    border-radius: 5px;
+}
+
+hr {
+    background-color: slategray;
+    width: auto;
+    height: 2px;
+}
+
+div.kulso {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid dodgerblue;
+    border-radius: 5px;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+ul.negyzet {
+    list-style-type: square;
+}
+
+ul.kor {
+    list-style-type: circle;
+}
+
+a.barca {
+    padding: 5px;
+    border-radius: 15px;
+    background-color: blue;
+    color: red;
+    margin:15px;
+}
+
+a.lakers {
+    padding: 5px;
+    border-radius: 15px;
+    background-color: yellow;
+    color: purple;
+    margin: 15px;
+}
+
+a:hover.lakers {
+    /* vegyük észre, hogy örökli a tulajdonságokat a szülőtől, egyet közülük felülírunk*/
+    background-color: purple;
+    color: yellow;
+}
+
+a:hover.barca {
+    background-color: red;
+    color: blue;
+}

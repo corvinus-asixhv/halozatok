@@ -138,7 +138,7 @@ a.lakers {
 }
 
 a:hover.lakers {
-    /* vegyük észre, hogy örökli a tulajdonságokat a szülőtől, egyet közülük felülírunk*/
+  
     background-color: purple;
     color: yellow;
 }

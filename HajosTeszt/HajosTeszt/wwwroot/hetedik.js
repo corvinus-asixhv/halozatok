@@ -1,5 +1,5 @@
 ﻿var kérdések;
-var k = 1;
+var questionNumber = 1;
 var kérdés
 var jóVálasz
 var képVanE
@@ -35,8 +35,8 @@ function kérdésMegjelenítés(kérdés) {
     jóVálasz = kérdés.correctAnswer;
     console.log(jóVálasz)
 }
-function kérdésBetöltés(k) {
-    fetch(`/questions/${k}`)
+function kérdésBetöltés(id) {
+    fetch(`/questions/${id}`)
         .then(response => {
             if (!response.ok) {
                 console.error(`Hibás válasz: ${response.status}`)
@@ -49,22 +49,22 @@ function kérdésBetöltés(k) {
 }    
 
 function vissza() {
-    if (k == 0) {
-        k = 859
+    if (questionNumber == 0) {
+        questionNumber = 859
     }
     else {
-        k--
+        questionNumber--
     }
-    kérdésBetöltés(k)
+    kérdésBetöltés(questionNumber)
 }
 function előre() {
-    if (k == 859) {
-        k = 1
+    if (questionNumber == 859) {
+        questionNumber = 1
     }
     else {
-        k++
+        questionNumber++
     }
-    kérdésBetöltés(k)
+    kérdésBetöltés(questionNumber)
 }
 
 //kérdések: hogyan lehetne a válaszSzinezést egy függvénybe? jó és rossz osztályokat egyszerre eltávolítani?

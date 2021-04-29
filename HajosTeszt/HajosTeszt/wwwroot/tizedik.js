@@ -127,8 +127,6 @@ function válaszSzínezés1() {
     nemKatt();
     if (jóVálasz == 1) {
         hotList[displayedQuestion].goodAnswers++;
-        localStorage.getItem(hotList);
-        console.log(hotlist);
         document.getElementById("válasz1").classList.add("jó")
         document.getElementById("válasz2").classList.add("rossz")
         document.getElementById("válasz3").classList.add("rossz")

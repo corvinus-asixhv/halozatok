@@ -48,11 +48,36 @@ function init() {
         hotList[i] = q;
     }
 
+    //Nem működik...
+   /* //Kérdések száma
+    fetch("questions/count")
+        .then(result => result.text())
+        .then(n => { numberOfQuestions = parseInt(n) })
+
+    //Mentett állapot olvasása
+    if (localStorage.getItem("hotList")) {
+        hotList =JSON.parse(localStorage.getItem("hotList"));
+    }
+    if (localStorage.getItem("displayedQuestion")) {
+        displayedQuestion =parseInt(localStorage.getItem("displayedQuestion"));
+    }
+    if (localStorage.getItem("nextQuestion")) {
+        nextQuestion =parseInt( localStorage.getItem("nextQuestion"));
+    }
     //Első kérdések letöltése
+    if (hotList.length < 0) {
+        for (var i = 0; i < questionsInHotList; i++) {
+            kérdésBetöltés(nextQuestion, i);
+            nextQuestion++;
+        }
+    } else {
+        kérdésMegjelenítés();
+    }*/
     for (var i = 0; i < questionsInHotList; i++) {
         kérdésBetöltés(nextQuestion, i);
         nextQuestion++;
     }
+    
 }
 
 function kérdésMegjelenítés() {
@@ -100,9 +125,6 @@ function előre() {
         
     }
 }
-
-//kérdések: hogyan lehetne a válaszSzinezést egy függvénybe? jó és rossz osztályokat egyszerre eltávolítani?
-
 function katt() {
     document.getElementById("válasz1").classList.add("kattintható");
     document.getElementById("válasz2").classList.add("kattintható");
@@ -115,6 +137,9 @@ function katt() {
 
 function nemKatt() {
     timeoutHandler = setTimeout(előre, 3000);
+    localStorage.setItem("hotList", JSON.stringify(hotList));
+    localStorage.setItem("displayedQuestion", displayedQuestion);
+    localStorage.setItem("nextQuestion", nextQuestion);
     document.getElementById("válasz1").classList.remove("kattintható")
     document.getElementById("válasz2").classList.remove("kattintható")
     document.getElementById("válasz3").classList.remove("kattintható")
